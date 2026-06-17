@@ -1,0 +1,103 @@
+\documentclass[10pt, a4paper, twocolumn]{article}
+
+% --- PAQUETS DE BASE ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{microtype} % Micro-ajustements typographiques pour les colonnes étroites
+
+% --- POLICE ET VISUEL ---
+\usepackage{mathpazo} % Police Palatino : élégante, sobre, style "livre ancien"
+\usepackage{lettrine} % Pour la grande lettre du début
+\usepackage[top=2cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry} % Marges optimisées
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref} % Pour les liens cliquables (email)
+
+% --- RÉGLAGES HYPERREF ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    pdfauthor={Corentin MICHEL}
+}
+
+% --- REGLAGES DE STYLE ---
+\pagestyle{empty} % Pas de numéro de page (demande utilisateur)
+
+% Personnalisation des titres de section (Petites capitales, ligne de séparation)
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{1.5em}{0.5em}
+
+% --- EN-TÊTE ---
+\title{\vspace{-1.5cm}\textbf{\LARGE Résistance à l'Entropie}\\ \large Candidature pour la Chartreuse Terminorum}
+\author{\textsc{Corentin MICHEL}\\ \small Coureur \& Navigateur}
+\date{\vspace{-0.5em}11 novembre 2025}
+
+% --- DÉBUT DU DOCUMENT ---
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % Assure qu'il n'y a pas de numéro sur la première page
+
+% --- INTRODUCTION AVEC LETTRINE ---
+\noindent
+\lettrine[lines=3, lraise=0.1, nindent=0em, slope=-0.5em]{F}{ort} du constat que l'entropie est un nuage de désordre qui nous enveloppe quotidiennement (brouillard digital, d'attentes sociales, d'urgences stériles), je cours. Pas pour fuir ou me déconnecter, mais pour trancher et clarifier. 
+
+L'ultra-endurance n'est pas pour moi une épreuve sportive : c'est la responsabilité radicale, l'acte de résistance ultime contre cette entropie. Quand le corps et l'esprit se recomposent par nécessité, on cesse d'être passager de sa vie et on redevient cartographe dans le chaos.
+
+La Terminorum incarne cela. Vous ne demandez pas de performeurs rapides et monotones, mais des navigateurs passionnés.
+
+% --- CORPS DU TEXTE (LISTE) ---
+\vspace{0.5cm}
+\noindent\rule{0.4\linewidth}{0.5pt} % Ligne de séparation fine
+\vspace{0.5cm}
+
+Ma courte vie de coureur en compte notamment quelques exemples significatifs :
+
+\begin{itemize}[leftmargin=*, label=\textbullet, itemsep=0.5em]
+    
+    \item \textbf{Le Raid28.} Première expérience en orientation où j'ai pu comprendre qu'il faut parfois décider sous incertitude.
+    
+    \item \textbf{Autonomie brute.} Des sorties en autonomie de plusieurs jours avec le hamac dans le sac. C'est pour moi une relation brute à l'espace. On habite cet espace sans consommer.
+    
+    \item \textbf{Courir avec le temps.} Plusieurs épreuves de 12\,h, 24\,h et maintenant ma préparation pour le TOR. Ce sont des épreuves où le chrono ou la vitesse importent peu, mais où tenir quand le mental fatigue et se délite devient primordial. Où danser avec l'épuisement devient nécessaire.
+    
+    \item \textbf{L'UBTL.} Cet événement m'a permis de remettre l'environnement au cœur du trail. Durant la 1\textsuperscript{re} édition, 2 équipes de 4 s'affrontent pendant 48\,h pour remettre le vivant au cœur de l'effort : plantation d'arbres, construction de baissières, haies sèches, gestion du sommeil et course… Le seul événement où l'impact carbone est positif. J'ai pu parcourir 201\,km et me confronter aux défis de l'ultra-endurance.
+    
+    \item \textbf{Le Trail des Aiguilles Rouges (DNF).} Cette épreuve a été pour moi une vraie claque d'humilité. La violence passive de la montagne m'a fait arrêter.
+    
+\end{itemize}
+
+% --- CONCLUSION ---
+\vspace{0.5cm}
+\noindent\rule{0.4\linewidth}{0.5pt} % Ligne de séparation fine
+\vspace{0.5cm}
+
+Je ne prétends pas boucler les 5 boucles à coup sûr, mais je sais ce que disait Dory dans Nemo : « Marche droit devant toi ! » quand le brouillard se lève : c'est refuser de se laisser diriger par l'entropie. 
+
+Ici pas de records, pas de spectateurs, pas de likes, juste un chemin à ordonner avec l'humilité de celui qui sait que la forêt ne se plie pas à nos désirs. C'est cette discipline que je propose de partager : une course sans masques où chaque pas est un acte de résistance face au chaos du monde et où chacun peut dire :
+
+\begin{quote}
+\itshape
+« Je suis. J'ai cette énergie animale, cette facilité de mouvement, […], cette impression d'occuper juste ce qu'il faut d'espace. Je suis réduit à l'essentiel : mes os et mes muscles, […], mon regard est clair, je ne fais plus qu'un avec mon corps, je l'occupe avec délice. »
+\end{quote}
+\hfill \small — \textit{George A. Sheehan - Running to Win: How to Achieve the Physical, Mental and Spiritual Victories of Running}
+
+\vspace{0.5cm}
+\noindent\rule{0.4\linewidth}{0.5pt} % Ligne de séparation fine
+\vspace{0.3cm}
+
+\paragraph{Post-Scriptum.} Dory n'avait pas tout à fait raison. On ne marche pas devant soi, on creuse un chemin qui n'a jamais existé et n'existera plus.
+
+% --- COORDONNÉES (MINIMALISTE) ---
+\vspace*{1.5cm}
+\begin{center}
+\small
+\textsc{— Contact —}\par\vspace{0.3em}
+\href{mailto:corentin.michel@mailo.com}{corentin.michel@mailo.com}\\
++33\,7\,50\,41\,62\,99\\
+18 rue Audibert et Lavirotte, Lyon
+\end{center}
+
+\end{document}
