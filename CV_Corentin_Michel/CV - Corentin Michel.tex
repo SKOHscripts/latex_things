@@ -1,0 +1,309 @@
+\documentclass{modernsimplecv}
+% try out different fonts: classic, fira, raleway, chivo
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5cm, a4paper]{geometry}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % Nécessaire si vous n'utilisez pas XeLaTeX ou LuaLaTeX
+\frenchbsetup{og=«, fg=»}
+% ------------------------------------------------------------------------------------
+% you can try out different fonts here by commenting the following lines in and out
+% -----------------------------------------------------------------------------------
+%\usepackage[default]{raleway}
+%\usepackage[sfdefault]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}\normalfont
+%\usepackage[familydefault,light]{Chivo}
+% \usepackage[sfdefault,light,condensed]{roboto}
+% \usepackage[default]{cantarell}
+\usepackage[sfdefault]{AlegreyaSans}
+
+%\usepackage[sfdefault]{mathpazo} % Use the Palatino font
+
+
+
+\usepackage{beuron}
+%\usepackage{LobsterTwo}%if not suposed to be main font, load other main font after this
+\usepackage{fontawesome}
+
+
+%------------------------------------------------------------------ Variablen
+
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.45\textwidth}
+\setlength{\rightcolwidth}{0.45\textwidth}
+
+%------------------------------------------------------------------
+\title{CV_Corentin_Michel}
+\author{\LaTeX{} Corentin Michel}
+\date{2021}
+
+\pagestyle{empty}
+\begin{document}
+
+
+\thispagestyle{empty}
+%-------------------------------------------------------------
+
+
+
+\tikz[remember picture,overlay] {%
+	\node[rectangle, fill=white, anchor=north, minimum width=\paperwidth, minimum height=5cm](header) at (current page.north){};%
+}
+
+\begin{minipage}[t]{0.21\textwidth}
+	\vspace{-40pt} % Trick for alignment
+	\roundpic{pictures/Corentin_pp.png}
+	% \includegraphics[width=\textwidth]{Corentin.jpg}\hspace{0.5em}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.77\textwidth}
+	\vspace{-25pt} % Trick for alignment
+
+	\begin{tcolorbox}[boxsep=1mm, boxrule=0.1mm, colframe=green,colback=green]
+		% \begin{shaded*}
+			\color{white_grey}
+		\begin{minipage}[t]{0.4\textwidth}
+			\vspace{0pt} % Trick for alignment
+			% here the fancy font can be taken out by removing \LobsterTwo
+			{\par\centering\huge\textsc{Corentin MICHEL}} \\[0.3cm]
+			%{\textsc{Ingénieur développeur formulaire d’exploitation pour la chaîne de calcul de cœurs ODYSSÉE}}
+            {\textsc{Ingénieur confirmé calcul scientifique Python}}
+
+
+		\end{minipage}\hfill
+		\vspace{0pt}
+		\begin{minipage}[t]{0.55\textwidth}
+			\vspace{0pt} % Trick for alignment
+
+			% \aiAcademiaSquare
+			\faGithub ~ \protect\url{www.github.com/SKOHscripts} \\
+			%\aiOrcid
+			\faLinkedin ~ \protect\url{www.linkedin.com/in/corentin-michel-042}
+			%\includegraphics[width=4mm]{pictures/mastodon_white.png}~ \protect\url{@Niitneroc@mastodon.social}
+                %\\ \textbf{UNIE/GECC/SED}\\
+
+		\end{minipage}
+		%\begin{tcolorbox}[boxsep=-1mm, boxrule=0mm,colframe=green!65,colback=green!65]
+		%	\small\textcolor{black!85}{\textbf{Rigoureux, positif et passionné, je recherche un emploi dans le domaine du développement de l'Energie Nucléaire pour l'avenir.}}
+		%\end{tcolorbox}
+		 %\hfill
+		 %\end{shaded*}
+	\end{tcolorbox}
+    % ======================================================
+    % Résumé profil (bandeau lumineux sous le header)
+    % ======================================================
+    %\begin{tcolorbox}[boxsep=3pt, boxrule=0pt, colframe=accentcolor!0,
+    %                  colback=accentcolor!6, left=4mm, right=4mm,
+    %                  top=3pt, bottom=3pt, enhanced jigsaw]
+    \begin{tcolorbox}[boxsep=-1mm, boxrule=0mm,colframe=shadecolor,colback=shadecolor]
+
+      \footnotesize
+      Ingénieur développeur spécialisé en calcul scientifique et neutronique, avec expérience dans le développement de codes Python pour la sûreté et l’optimisation du cœur des réacteurs nucléaires (chaîne ODYSSÉE, formulaire d’exploitation EMC2-E). Habitué aux chaînes de calcul industrielles complexes, à la modélisation de phénomènes physiques et à l’industrialisation de code en environnement contraint. Fort engagement associatif et goût prononcé pour l’open source et les environnements Linux.
+    \end{tcolorbox}
+\end{minipage}\\[15pt]
+
+
+%------------------------------------------------
+
+% hier muss die "unsichtbare" Überschrift rein, weil er sonst nicht die Paracols startet... komisch...
+\subsection*{}
+\vspace{-5em}
+
+\setlength{\columnsep}{1.5cm}
+\columnratio{0.47}[0.5]
+\begin{paracol}{2}
+	\hbadness5000
+	% \backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1
+	%\backgroundcolor{g}[rgb]{0.8,1,1}
+	% \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
+
+	\paracolbackgroundoptions
+
+	% 0.9,0.9,0.9 -- 0.8,0.8,0.8
+
+	\footnotesize
+	{
+
+		% \small
+		\hspace{-5pt}
+		\begin{minipage}[t]{\leftcolwidth}
+			\section*{\faCompass ~ Expériences professionnelles}
+			\begin{tabular}{p{0.14\textwidth}|p{0.7\textwidth}c}
+			\cveventraw{Nov 2022$\cdot$}{Ingénieur Études Confirmé Cœur Combustible $\cdot$ UNIE/GECC/SED}{Lyon}{France}
+            {Développement et industrialisation d’un code de calcul neutronique en Python (formulaire d'exploitation EMC2-E de la chaîne de calcul ODYSSÉE) pour sécuriser et optimiser la recharge des cœurs de réacteurs nucléaires.
+			}{\continuationline} \\
+				\cvevent{Mars$\cdot$ Août 2022}{Ingénieur en stage de fin d'étude $\cdot$ DT/PRC/CM}{Lyon}{France}
+                {Modélisation d’un benchmark multi-physique international avec la chaîne ODYSSÉE, création de bibliothèques neutroniques pour les différents cycles du benchmark, calcul des cycles d’un réacteur américain et comparaison aux données. 
+				}{pictures/edf.png} \\
+			\cvevent{Sept 2021 $\cdot$ Fév 2022}{Projet industriel}{Montrouge}{France}{Application de la méthodologie MBSE pour la mise en place de stratégies concrètes en cas d'Accident Grave à l'EPR.
+
+			Prise en main du logiciel d'ingénierie système CAPELLA.
+			}{pictures/assystem.png} \\
+			    \cvevent{Mai $\cdot$ Août 2021}{Assistant de recherche en laboratoire de Physique Nucléaire à l’accélérateur DESIREE}{Stockholm}{Suède}{\emph{"Cooling dynamics of carbonaceous molecules in DESIREE"}
+
+				Analyses d’expériences sur les ions $C_2^-$ issues de DESIREE. Modélisation des potentiels de Morse et de la décroissance spontanée afin d'expliquer la compétition entre fragmentation et émission d'électron.
+				}{pictures/su_rev.png} \\
+			\cvevent{Juillet $\cdot$ Août 2020}{Assistant de recherche en laboratoire de Physique Nucléaire au GANIL (laboratoire commun CEA/CNRS) }{Caen}{France}{Modélisation python de l'émittance des faisceaux d’ions après leur passage dans des éléments d’optique et optimisation pour l’hadronthérapie.
+			}{pictures/GANIL.png} \\
+				\cvevent{2019 $\cdot$ 2022}{Réserviste dans la Gendarmerie Nationale}{Caen}{France}{Surveillance générale de la zone urbaine de Caen la Mer, assistance à la population et travail en équipe en situation sensible.}{pictures/gend.png}
+			\end{tabular}
+			\vspace{-1em}
+		\end{minipage}
+
+
+		\section*{\faGraduationCap ~ Formation}
+		\begin{minipage}[t]{\leftcolwidth}
+			\begin{tabular}{p{0.125\textwidth}| p{0.7\textwidth} c}
+				\cvevent{2018$\cdot$ 2022}{École d'ingénieur}{ENSICAEN -- École publique d'ingénieurs et centre de recherche}{Caen $\cdot$ France}{Filière Électronique, Physique Appliquée et Programmation
+				Majeure Génie Nucléaire et Énergétique.}{pictures/ensi.png}                                                                                  \\
+				\cvevent{2020$\cdot$ 2022}{Master de Management}{École de Management de Normandie}{Caen $\cdot$ France}{Grade de Master Grande École de l’EMN.
+
+				Compétences managériales, financières, commerciales, stratégiques, entrepreneuriales et internationales.}{pictures/EM-Logo-2018-default.png} \\
+				% \cvevent{2017 $\cdot$ 2018}{Classe Préparatoire aux Grandes Ecoles}{Lycée Henri Bergson}{Angers $\cdot$ France}{Filière scientifique Physique/Chimie}{*}                                                                                           \\
+				\cvevent{2012$\cdot$ 2018}{Lycée et Classe Préparatoire militaires}{Prytanée National Militaire}{La Flèche $\cdot$ France}{Filière scientifique Physique/Chimie}{pictures/bahut.png}
+			\end{tabular}
+			\vspace{1em}
+		\end{minipage}
+
+		% \section{\faCode ~ Logiciels}
+		% \vspace{-1.9em}
+		% \begin{figure}[H]
+		% 	\center
+		% 	\includegraphics[width=9cm]{pictures/image3606.png}
+		% \end{figure}
+
+        % \vspace{5pt}
+		\begin{minipage}[t]{\leftcolwidth}
+			\begin{tcolorbox}[boxsep=-1mm, boxrule=0mm,colframe=shadecolor,colback=shadecolor]
+				\section*{\faCheckSquareO ~ Références}
+				\begin{tabular}{>{\scriptsize\bfseries\scshape}l  >{\scriptsize\it}l >{\scriptsize}l}
+					%Laurent Maunoury   & Ingénieur CNRS        & \href{mailto:laurent.maunoury@ganil.fr}{laurent.maunoury@ganil.fr} \\
+					Henning Zettergren & Stockholm Univ.       & \href{mailto:henning@fysik.su.se }{henning@fysik.su.se}            \\
+					%Marc Labalme       & Maître de conférences & \href{mailto:labalme@lpccaen.in2p3.fr}{labalme@lpccaen.in2p3.fr}   \\
+					%Issam El Haddad & Ingénieur ASSYSTEM  & \href{mailto:ielhaddad@assystem.com}{ielhaddad@assystem.com}   \\
+					Denis Kerdraon       & Ingénieur EDF & \href{mailto:denis.kerdraon@edf.fr}{denis.kerdraon@edf.fr}   \\
+					Pierre Pinot       & Manager EDF & \href{mailto:pierre.pinot@edf.fr}{pierre.pinot@edf.fr}   \\
+				\end{tabular}
+			\end{tcolorbox}
+		\end{minipage}
+
+
+		\vspace{-30px}\hfill
+
+	}
+
+	%-----------------------------------------------------------------------------
+	%-----------------------------------------------------------------------------
+	\switchcolumn
+	\begin{tcolorbox}[boxsep=-1mm, boxrule=0.1mm, boxrule=0mm,colframe=shadecolor,colback=shadecolor]
+
+		\begin{minipage}[t]{\rightcolwidth}
+			\section*{\faCogs ~ Compétences}
+			\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.9\textwidth}}
+				\faCode   & \cvtag{Python}\cvtag{\LaTeX}\cvtag{Linux}\cvtag{Git}\cvtag{ODYSSÉE} \cvtag{CARABAS}\cvtag{COCAGNE}\cvtag{MCNP}\cvtag{Dragon}\cvtag{C/C++} \cvtag{systèmes embarqués}\cvtag{HTML5/CSS3}\cvtag{Web service}\\
+                \rule{0pt}{3ex}
+				\faLaptop & \cvtag{Matlab}\cvtag{Corys PWR C 1300 (simulateur REP)}\\
+                \rule{0pt}{3ex}
+				\faFlask  & \cvtag{Neutronique}\cvtag{instrumentation nucléaire}\cvtag{cycle du combustible}\\
+				\rule{0pt}{3ex}
+                \faSuitcase & Travail en environnement industriel multi-acteurs, animation et responsabilités associatives, capacités à vulgariser des problématiques complexes nouvelles et à formaliser des besoins.
+			\end{tabular}
+			\vspace{0.5em}
+		\end{minipage}
+
+		\begin{minipage}[t]{\rightcolwidth}
+			\section*{\faCodeFork ~ Projets \& Publications}
+			\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.8\textwidth}}
+                2026    & \emph{OECD/NEA TVA Watts Bar Unit 1 Benchmark: Overview of R\&D and Industrial French Solutions}\\
+                        & \scriptsize\url{https://www.ans.org/pubs/journals/nse/volume-200/}\\
+				2021    & \emph{DESIREE : Études de la dynamique de refroidissement des molécules carbonées} $\cdot$ DESIREE.              \\
+				            & \scriptsize\url{https://doi.org/10.6084/m9.figshare.15276429}                                                    \\
+				2020        & \emph{Émittance : transformation d'une émittance à travers différents systèmes d'optique ionique} $\cdot$ GANIL. \\
+				            & \scriptsize\url{https://doi.org/10.6084/m9.figshare.14754027}                                                    \\
+				Depuis 2020 & \faGithub ~ \protect\url{www.github.com/SKOHscripts} \\
+				2018        & \emph{TIPE : Anodes sacrificielles sur sous-marins, étude de la corrosion.}                                      \\
+				            & \scriptsize\url{https://doi.org/10.6084/m9.figshare.14909847.v1}                                                 \\
+			\end{tabular}
+			\vspace{0.5em}
+		\end{minipage}
+
+		\begin{minipage}[t]{\rightcolwidth}
+			\section*{\faCertificate ~ Brevets \& Certificats}
+			\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.8\textwidth}}
+				Avril 2020   & Mathworks Course completion certificate (Certificat Matlab)                                              \\
+
+				Juillet 2019 & Diplôme du PSC1 délivré par le Ministère de l'Intérieur                                                  \\
+				             & Brevet de préparation militaire Gendarmerie                                                              \\
+				Juin 2019    & TOEIC 895/990                                                                                            \\
+				Avril 2017   & Diplôme du premier niveau de donneur de sang bénévole                                                    \\
+				Août 2016    & Seconde Préparation Militaire de Découverte en tant que 				responsable d'une section de 48 nouveaux élèves. \\
+				Août 2015    & Préparation Militaire de découverte                                                                      \\
+				2013         & Formation de pilote de planeur                                                                           \\
+				Juillet 2012 & Brevet d'initiation à l'aéronautique avec mention
+			
+            \end{tabular}
+			\vspace{0.5em}
+		\end{minipage}
+
+		\begin{minipage}[t]{\rightcolwidth}
+			\section*{\faSunO ~ Autres activités}
+            % \hobbyicon{icône}{label}{couleur cercle}{taille fonte}{distance label-cercle}
+			\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
+                Ultra-Trail & Spécialisation sur des épreuves longues \\
+                Cyclisme & Bikepacking et ultra-distance \\
+                Autre & Plongée sous-marine (niveau 1), randonnées de \(~ 200 km\) en autonomie \\
+				\rule{0pt}{3ex}
+				Musique & Membre de l’harmonie du Prytanée National Militaire \\
+				\rule{0pt}{3ex}
+				Voyages & Europe $\cdot$ Amérique du Nord $\cdot$ Amérique du Sud $\cdot$ Australie $\cdot$ Pays Nordiques $\cdot$ Afrique \\
+				\rule{0pt}{3ex}
+				Associations    & Trésorier du café associatif \og Le Village\fg{}, Lyon 8. \\  
+                                & Président de l’association de voile habitable Caenlypso à l’ENSICAEN. \\
+                                & Président d'une liste pour le bureau des sports à l'ENSICAEN. \\
+				                & Président du club natation de l’ENSICAEN. \\
+				                & Trésorier du bureau des élèves du Prytanée Militaire. \\
+				\rule{0pt}{3ex}
+				Autres & OpenSource $\cdot$ Raspberry Pi 
+			\end{tabular}
+			\vspace{0em}
+		\end{minipage}
+
+		\begin{minipage}[t]{\rightcolwidth}
+			\section*{\faComments ~ Langues}
+			\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.8\textwidth}}
+				Français    & Langue natale                                             \\
+				Anglais B2  & \og English speaking contest EMN - 2019\fg{}                     \\
+				Allemand B1 & Diplôme du niveau B1 Cadre Européen des Langues. \\
+				Italien A1    & Apprentissage en autodidacte
+			\end{tabular}
+		\end{minipage}
+	\end{tcolorbox}
+	% \vspace{-1em}
+
+
+\end{paracol}
+
+\vfill{} % Whitespace before final footer
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+% \vspace{-1em}
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\textwidth}
+	\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+		{\small Corentin MICHEL \icon{\faBirthdayCake}{black}{} 28 ans \icon{\faMapMarker}{black}{} Lyon \icon{\faPhone}{black}{} +33(0) 7 50 41 62 99
+			\icon{\faEnvelope}{black}{} \protect\url{corentin.michel@mailo.com}
+		}\\
+		%{}\\
+		{\textbf{\LaTeX}}
+	\end{center}
+\end{minipage}
+
+\begin{figure}
+	\centering
+	\includegraphics[height=1\textheight]{"Reference letter"}
+	\label{fig:reference-letter}
+\end{figure}
+
+\end{document}
