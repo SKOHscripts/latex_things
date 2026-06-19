@@ -1,0 +1,25 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+indent.log
+*.diff.tex
+
+# Generated CV PDF (the source PDF "Reference letter.pdf" is tracked on purpose)
+CV_Corentin_Michel/CV - Corentin Michel.pdf
