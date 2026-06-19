@@ -12,6 +12,7 @@ main avec n'importe quelle distribution TeX Live.
 | `CV_Corentin_Michel/` | CV LaTeX (classe `modernsimplecv`) + images + lettre de référence |
 | `récits/` | Textes / récits en LaTeX (ex. *Résistance à l'entropie*) |
 | `.claude/skills/latex-document-skill/` | Skill universel LaTeX : 30 templates, scripts, guides de référence |
+| `.claude/skills/tailored-resume-generator/` | Skill d'optimisation de CV : adapte le contenu à une offre, mots-clés ATS, recommandations |
 | `.claude/hooks/session-start.sh` | Hook installant automatiquement l'outillage dans les sessions Claude Code web |
 | `.claude/settings.json` | Enregistre le hook `SessionStart` |
 | `.gitignore` | Ignore les artefacts de compilation LaTeX |
@@ -79,6 +80,20 @@ pour créer, compiler et convertir n'importe quel document en PDF professionnel.
   Pandoc (`convert_document.sh`).
 - **Guides** (`references/`) : bonnes pratiques, bibliographie, beamer, posters,
   tables/images, polices, débogage, accessibilité, etc.
+
+## Le skill `tailored-resume-generator`
+
+Skill d'**optimisation de CV** (issu de
+[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills))
+qui agit sur le **contenu**, pas la mise en forme : il analyse une offre d'emploi,
+réorganise et met en avant l'expérience pertinente, intègre naturellement les
+mots-clés ATS, et signale les manques à combler.
+
+Il est **complémentaire** de `latex-document-skill` :
+
+> **`tailored-resume-generator`** décide *quoi dire* (contenu adapté au poste) →
+> **`latex-document-skill`** décide *comment le rendre* (PDF dans ton style) →
+> métadonnées + vérifs (voir [REFERENCEMENT.md](CV_Corentin_Michel/REFERENCEMENT.md)).
 
 ## Installer l'outillage manuellement
 

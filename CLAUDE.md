@@ -57,11 +57,22 @@ clamscan fichier              # antivirus (nécessite une base freshclam)
 
 ## Quel skill / outil pour quel besoin
 
-Le skill **`latex-document-skill`** couvre tout le cycle de vie d'un document LaTeX.
-À invoquer dès qu'on crée/compile/convertit un `.tex` ou produit un PDF.
+Deux skills sont disponibles, complémentaires :
+
+- **`tailored-resume-generator`** — *contenu & stratégie* : analyse une offre d'emploi,
+  réorganise/met en avant l'expérience pertinente, optimise les mots-clés ATS
+  (naturellement, dans le texte), et liste les manques à combler. À invoquer pour
+  **optimiser/adapter le CONTENU d'un CV** à un poste, avant la mise en forme.
+- **`latex-document-skill`** — *mise en forme & production* : rend le contenu en PDF
+  LaTeX (templates, compilation, lint, conversion). À invoquer pour **créer/compiler/
+  convertir** le document.
+
+Workflow CV recommandé : `tailored-resume-generator` (quoi dire) → `latex-document-skill`
+(comment le rendre) → métadonnées + vérifs (voir `CV_Corentin_Michel/REFERENCEMENT.md`).
 
 | Besoin | Action |
 |---|---|
+| **Adapter/optimiser le contenu d'un CV à une offre** (priorisation, mots-clés ATS, manques) | skill **`tailored-resume-generator`** |
 | Créer un CV / lettre / rapport / facture / article / thèse / présentation / poster / examen / fiche mémo | Partir d'un template de `.claude/skills/latex-document-skill/assets/templates/` |
 | Compiler un `.tex` (auto-détection moteur, latexmk, filtrage du log) | `scripts/compile_latex.sh` |
 | Valider la syntaxe / vérifier les `\usepackage` manquants | `scripts/validate_latex.py`, `scripts/latex_package_check.sh` |

@@ -1,9 +1,12 @@
 # Convertir son CV en LaTeX (prompt prêt à l'emploi)
 
-Ce dépôt fournit un outillage LaTeX complet et le skill `latex-document-skill`.
+Ce dépôt fournit un outillage LaTeX complet et deux skills complémentaires :
+`tailored-resume-generator` (optimisation du **contenu** : adaptation à une offre,
+mots-clés ATS) et `latex-document-skill` (mise en forme : production du **PDF**).
 Voici un **prompt à copier-coller dans Claude Code** pour faire convertir *ton*
 CV en LaTeX **en gardant exactement ton style visuel**, le compiler en PDF, et
-recevoir un rapport de ce qu'il reste à ajuster.
+recevoir un rapport de ce qu'il reste à ajuster. Tu peux aussi (optionnel) lui faire
+**optimiser le contenu** pour une offre précise.
 
 ## Mode d'emploi
 
@@ -16,7 +19,9 @@ recevoir un rapport de ce qu'il reste à ajuster.
    - En session **web**, l'outillage LaTeX s'installe tout seul (hook `SessionStart`).
    - En local, fais d'abord installer les outils : `bash .claude/skills/latex-document-skill/setup.sh`.
 2. Aie ton **CV actuel** sous la main (PDF, Word/DOCX, ou image PNG/JPG) pour le joindre.
-3. Colle le prompt ci-dessous, et **joins ton CV** au message.
+3. (Optionnel) Si tu veux **optimiser** ton CV pour un poste précis, prépare aussi
+   le texte de **l'offre d'emploi** à coller.
+4. Colle le prompt ci-dessous, et **joins ton CV** au message.
 
 ---
 
@@ -26,16 +31,20 @@ recevoir un rapport de ce qu'il reste à ajuster.
 
 ```text
 Tu travailles dans un clone du dépôt « latex_things », qui embarque un outillage
-LaTeX complet et le skill `latex-document-skill` (conversion PDF→LaTeX, templates,
-scripts de compilation/lint/vérification). Avant de commencer, lis : `CLAUDE.md`,
-`README.md`, `CV_Corentin_Michel/REFERENCEMENT.md` et
-`.claude/skills/latex-document-skill/SKILL.md`.
+LaTeX complet et DEUX skills : `latex-document-skill` (conversion PDF→LaTeX, templates,
+compilation/lint/vérification) et `tailored-resume-generator` (optimisation du contenu
+d'un CV pour une offre : priorisation, mots-clés ATS, recommandations). Avant de
+commencer, lis : `CLAUDE.md`, `README.md`, `CV_Corentin_Michel/REFERENCEMENT.md`,
+`.claude/skills/latex-document-skill/SKILL.md` et
+`.claude/skills/tailored-resume-generator/SKILL.md`.
 
 OBJECTIF
 Convertir MON CV actuel (que je joins à ce message) en LaTeX, en REPRODUISANT
 FIDÈLEMENT son style visuel. C'est LaTeX qui doit s'adapter à MON CV — surtout ne
 copie pas le style du CV d'exemple du dépôt (CV_Corentin_Michel) et n'applique pas
 un template générique. Le résultat doit ressembler à mon CV, pas l'inverse.
+Si je joins une OFFRE D'EMPLOI, optimise aussi le CONTENU pour ce poste (voir étape 5b) ;
+sinon, reproduis le contenu tel quel.
 
 ÉTAPES
 1. Vérifie l'outillage : `pdflatex`, `latexmk`, `chktex`, `latexindent`, `qpdf`,
@@ -54,6 +63,13 @@ un template générique. Le résultat doit ressembler à mon CV, pas l'inverse.
    - ne réutilise les macros/classes du dépôt que si elles servent MON style.
 5. NE PAS inventer de contenu : reprends exactement le texte de mon CV. Si un élément
    est illisible/ambigu dans la source, demande-moi.
+5b. OPTIMISATION (uniquement si je joins une offre d'emploi) : utilise le skill
+   `tailored-resume-generator` pour analyser l'offre et adapter le CONTENU — réordonner
+   et reformuler mes expériences pour mettre en avant le pertinent, intégrer
+   NATURELLEMENT les mots-clés de l'offre (pas de bourrage, pas de mensonge), et
+   repérer les manques. Contraintes : ne change PAS la mise en page / le style ;
+   n'invente AUCUNE expérience ou compétence ; présente-moi d'abord un RÉSUMÉ des
+   changements proposés (avant/après) et attends ma validation avant d'intégrer.
 6. Applique les bonnes pratiques de `CV_Corentin_Michel/REFERENCEMENT.md` :
    - métadonnées PDF via `\hypersetup{...}` + `\usepackage{hyperxmp}` + `pdflang` ;
    - mots-clés PERTINENTS tirés de mon contenu (compétences, intitulés), sans bourrage ;
@@ -74,6 +90,8 @@ un template générique. Le résultat doit ressembler à mon CV, pas l'inverse.
        exactement et pourquoi — ex. police propriétaire, effet graphique),
      * les polices/paquets à installer si besoin,
      * le contenu à vérifier ou mettre à jour de mon côté,
+     * si optimisation : le résumé des changements de contenu et les mots-clés de
+       l'offre couverts / non couverts (manques à combler),
      * les suggestions issues des bonnes pratiques (métadonnées, nommage, taille,
        accessibilité / PDF tagué).
 10. Dis-moi explicitement CE QUE JE DOIS RELIRE OU MODIFIER.
