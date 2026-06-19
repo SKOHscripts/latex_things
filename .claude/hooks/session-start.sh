@@ -39,8 +39,8 @@ if [ "$need_install" = true ]; then
     texlive-fonts-recommended texlive-fonts-extra \
     texlive-lang-french texlive-pictures texlive-science \
     texlive-xetex texlive-luatex texlive-bibtex-extra biber \
-    latexmk texlive-extra-utils chktex \
-    latexindent libyaml-tiny-perl libfile-homedir-perl \
+    latexmk texlive-extra-utils chktex lacheck latexdiff \
+    libyaml-tiny-perl libfile-homedir-perl \
     liblog-log4perl-perl libunicode-linebreak-perl \
     poppler-utils imagemagick ghostscript qpdf \
     clamav pngcheck libimage-exiftool-perl
