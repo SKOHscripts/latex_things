@@ -23,11 +23,15 @@ main avec n'importe quelle distribution TeX Live.
 public ici pour servir d'**exemple / de modèle** — la classe `modernsimplecv`, la
 mise en page deux colonnes, les macros (`\cvevent`, `\cvtag`, `\roundpic`…) et les
 métadonnées PDF sont réutilisables tels quels. **Remplace les informations
-personnelles avant toute réutilisation.
+personnelles avant toute réutilisation.**
 
 Voir aussi [**Bien référencer son CV PDF**](CV_Corentin_Michel/REFERENCEMENT.md) :
 bonnes pratiques de nommage de fichier, de métadonnées (Info + XMP/Dublin Core),
-de taille, d'accessibilité (PDF tagué) et de cohérence en ligne.**
+de taille, d'accessibilité (PDF tagué) et de cohérence en ligne.
+
+➡️ Tu veux convertir **ton propre CV** en LaTeX en gardant ton style ? Suis
+[**CONVERTIR-MON-CV.md**](CONVERTIR-MON-CV.md) : un prompt prêt à coller dans Claude
+Code qui reproduit ton CV en LaTeX, le compile en PDF et te dit quoi ajuster.
 
 ## Compiler un document
 
