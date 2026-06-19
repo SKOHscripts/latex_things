@@ -39,8 +39,12 @@
 
 % Métadonnées PDF (contexte pour outils IA / ATS, recherche bureau).
 % hyperref est déjà chargé par modernsimplecv ; pdfencoding=auto gère les accents.
+% hyperxmp recopie ces champs en métadonnées XMP/Dublin Core (dc:*), lues par les
+% indexeurs robustes et certains outils IA ; à charger après hyperref.
+\usepackage{hyperxmp}
 \hypersetup{
   pdfencoding=auto,
+  pdflang={fr-FR},
   pdftitle={CV - Corentin Michel - Ingénieur calcul scientifique Python},
   pdfauthor={Corentin Michel},
   pdfsubject={Curriculum Vitae - Ingénieur calcul scientifique et neutronique},
