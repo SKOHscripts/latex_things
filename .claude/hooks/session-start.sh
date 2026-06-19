@@ -10,7 +10,7 @@ fi
 
 # Idempotent: if the key tools are already present, skip the (slow) install.
 need_install=false
-for bin in pdflatex pdfinfo exiftool pngcheck clamscan convert; do
+for bin in pdflatex latexmk chktex latexindent pdfinfo exiftool pngcheck clamscan convert; do
   command -v "$bin" >/dev/null 2>&1 || need_install=true
 done
 
@@ -24,16 +24,24 @@ if [ "$need_install" = true ]; then
   # environment's network policy may block; the main archive is what we need.
   $SUDO apt-get update -qq || true
 
-  # LaTeX (pdflatex/xelatex/lualatex) — subset covering the CV's packages
-  # (AlegreyaSans, beuron, fontawesome, paracol, tcolorbox, tikz, smartdiagram,
-  #  titlesec, french babel, siunitx, ...) plus bibtex/biber.
-  # PDF/image tooling: poppler-utils, imagemagick, ghostscript, qpdf.
-  # Security / "cyber" tooling: clamav, pngcheck, exiftool.
+  # Full LaTeX -> PDF generate & verify toolchain:
+  #
+  # Build:   pdflatex/xelatex/lualatex + latexmk; package set covers the CV
+  #          (AlegreyaSans, beuron, fontawesome, paracol, tcolorbox, tikz,
+  #           smartdiagram, titlesec, french babel, siunitx, ...) and biber.
+  # Lint:    chktex (uses the skill's .chktexrc) and lacheck (texlive-extra-utils).
+  # Fixer:   latexindent (+ its Perl deps) for formatting/auto-fixing .tex.
+  # Extras:  texlive-extra-utils brings latexdiff, texcount, lacheck, etc.
+  # PDF/img: poppler-utils, imagemagick, ghostscript, qpdf (verify/convert).
+  # Security:clamav, pngcheck, exiftool (asset checking).
   $SUDO apt-get install -y --no-install-recommends \
     texlive-latex-base texlive-latex-recommended texlive-latex-extra \
     texlive-fonts-recommended texlive-fonts-extra \
     texlive-lang-french texlive-pictures texlive-science \
-    texlive-xetex texlive-luatex texlive-bibtex-extra biber latexmk \
+    texlive-xetex texlive-luatex texlive-bibtex-extra biber \
+    latexmk texlive-extra-utils chktex \
+    latexindent libyaml-tiny-perl libfile-homedir-perl \
+    liblog-log4perl-perl libunicode-linebreak-perl \
     poppler-utils imagemagick ghostscript qpdf \
     clamav pngcheck libimage-exiftool-perl
 
@@ -53,4 +61,4 @@ if [ -f "$REQ" ] && command -v pip3 >/dev/null 2>&1; then
     echo "WARN: could not install Python deps from $REQ" >&2
 fi
 
-echo "session-start hook: LaTeX + PDF/image + security tooling ready."
+echo "session-start hook: LaTeX build/lint/fix + PDF/image + security tooling ready."
